@@ -1,0 +1,5 @@
+[run]
+include = teams_happiness/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
