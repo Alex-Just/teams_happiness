@@ -6,32 +6,46 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ('users', '0001_initial'),
-    ]
+    dependencies = [("users", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='Team',
+            name="Team",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Name of Team')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, verbose_name="Name of Team")),
             ],
         ),
         migrations.AddField(
-            model_name='user',
-            name='happiness_level',
-            field=models.IntegerField(choices=[(1, 'Unhappy'), (3, 'Neutral'), (5, 'Very Happy')], default=3),
+            model_name="user",
+            name="happiness_level",
+            field=models.IntegerField(
+                choices=[(1, "Unhappy"), (3, "Neutral"), (5, "Very Happy")], default=3
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='timezone',
-            field=timezone_field.fields.TimeZoneField(blank=True, default='UTC', verbose_name='Timezone of User'),
+            model_name="user",
+            name="timezone",
+            field=timezone_field.fields.TimeZoneField(
+                blank=True, default="UTC", verbose_name="Timezone of User"
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='team',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
-                                    to='users.Team'),
+            model_name="user",
+            name="team",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to="users.Team",
+            ),
         ),
     ]

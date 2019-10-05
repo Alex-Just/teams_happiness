@@ -6,15 +6,17 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ('users', '0002_user_happines_and_teams'),
-    ]
+    dependencies = [("users", "0002_user_happines_and_teams")]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='happiness_level_changed',
-            field=model_utils.fields.MonitorField(blank=True, default=django.utils.timezone.now,
-                                                  monitor='happiness_level', null=True),
-        ),
+            model_name="user",
+            name="happiness_level_changed",
+            field=model_utils.fields.MonitorField(
+                blank=True,
+                default=django.utils.timezone.now,
+                monitor="happiness_level",
+                null=True,
+            ),
+        )
     ]

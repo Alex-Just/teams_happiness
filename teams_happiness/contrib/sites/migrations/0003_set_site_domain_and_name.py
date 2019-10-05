@@ -12,10 +12,7 @@ def update_site_forward(apps, schema_editor):
     Site = apps.get_model("sites", "Site")
     Site.objects.update_or_create(
         id=settings.SITE_ID,
-        defaults={
-            "domain": "127.0.0.1:8000",
-            "name": "Teams Happiness",
-        },
+        defaults={"domain": "127.0.0.1:8000", "name": "Teams Happiness"},
     )
 
 
@@ -23,7 +20,8 @@ def update_site_backward(apps, schema_editor):
     """Revert site domain and name to default."""
     Site = apps.get_model("sites", "Site")
     Site.objects.update_or_create(
-        id=settings.SITE_ID, defaults={"domain": "127.0.0.1:8000", "name": "127.0.0.1:8000"}
+        id=settings.SITE_ID,
+        defaults={"domain": "127.0.0.1:8000", "name": "127.0.0.1:8000"},
     )
 
 

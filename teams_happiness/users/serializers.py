@@ -12,17 +12,27 @@ class TeamSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    statistics = serializers.SerializerMethodField(source='*')
+    statistics = serializers.SerializerMethodField(source="*")
     team = TeamSerializer()
 
     class Meta:
         model = User
-        fields = ("id", "username", "first_name", "last_name", "happiness_level", "statistics", "team")
+        fields = (
+            "id",
+            "username",
+            "first_name",
+            "last_name",
+            "happiness_level",
+            "statistics",
+            "team",
+        )
         read_only_fields = ("username", "id", "statistics", "team")
 
     def validate_happiness_level(self, value):
         if self.instance and not self.instance.can_change_happiness_level:
-            raise serializers.ValidationError("Users can update their happiness level only once per day.")
+            raise serializers.ValidationError(
+                "Users can update their happiness level only once per day."
+            )
         return value
 
     def get_statistics(self, obj):
