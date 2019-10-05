@@ -4,16 +4,25 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework.routers import DefaultRouter
+
+from teams_happiness.users.views import UserViewSet
+
+router = DefaultRouter()
+router.register(r"users", UserViewSet)
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
-    # Django Admin, use {% url 'admin:index' %}
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("api-token-auth/", obtain_auth_token),
+    # Django Admin, use {% url "admin:index" %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("teams_happiness.users.urls", namespace="users")),
+    path("api/v1/", include(router.urls)),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

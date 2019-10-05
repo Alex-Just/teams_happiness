@@ -12,9 +12,9 @@ User = get_user_model()
 class UserAdmin(auth_admin.UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    fieldsets = (
-                ("User", {"fields": ("happiness_level", "team", "timezone", "name")}),) + auth_admin.UserAdmin.fieldsets
-    list_display = ("username", "name", "is_superuser")
+    fieldsets = (("User", {"fields": ("happiness_level", "happiness_level_changed", "team", "timezone", "name")}),) \
+        + auth_admin.UserAdmin.fieldsets
+    list_display = ("username", "name", "is_superuser", "team", "happiness_level", "can_change_happiness_level")
     list_filter = ("team", "happiness_level", "is_superuser")
     search_fields = ["name"]
     autocomplete_fields = ["team"]
