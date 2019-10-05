@@ -1,27 +1,26 @@
 -r ./base.txt
 
-Werkzeug==0.14.1  # pyup: < 0.15 # https://github.com/pallets/werkzeug
-ipdb==0.12.2  # https://github.com/gotcha/ipdb
-psycopg2-binary==2.8.3  # https://github.com/psycopg/psycopg2
+ipdb==0.12.2  # https://github.com/gotcha/ipdb (Integration of IPython pdb)
+psycopg2-binary==2.8.3  # https://github.com/psycopg/psycopg2 (PostgreSQL DB adapter for Python programming language)
 
 # Testing
 # ------------------------------------------------------------------------------
-mypy==0.730  # https://github.com/python/mypy
-pytest==5.2.0  # https://github.com/pytest-dev/pytest
-pytest-sugar==0.9.2  # https://github.com/Frozenball/pytest-sugar
+mypy==0.730  # https://github.com/python/mypy (Optional static typing for Python 3 and 2 (PEP 484))
+pytest==5.2.0  # https://github.com/pytest-dev/pytest (A pytest testing framework)
+pytest-sugar==0.9.2  # https://github.com/Frozenball/pytest-sugar (Changes the default look and feel of py.test)
 
 # Code quality
 # ------------------------------------------------------------------------------
-flake8==3.7.8  # https://github.com/PyCQA/flake8
-coverage==4.5.4  # https://github.com/nedbat/coveragepy
-black==19.3b0  # https://github.com/ambv/black
-pylint-django==2.0.11  # https://github.com/PyCQA/pylint-django
+flake8==3.7.8  # https://github.com/PyCQA/flake8 (Glues together pep8, pyflakes, other plugins to check style and quality)
+coverage==4.5.4  # https://github.com/nedbat/coveragepy (Code coverage measurement for Python)
+black==19.3b0  # https://github.com/ambv/black (The uncompromising Python code formatter)
+pylint-django==2.0.11  # https://github.com/PyCQA/pylint-django (Pylint plugin for improving code analysis for Django)
 
 # Django
 # ------------------------------------------------------------------------------
-factory-boy==2.12.0  # https://github.com/FactoryBoy/factory_boy
+factory-boy==2.12.0  # https://github.com/FactoryBoy/factory_boy (A test fixtures replacement for Python)
 
-django-debug-toolbar==2.0  # https://github.com/jazzband/django-debug-toolbar
-django-extensions==2.2.3  # https://github.com/django-extensions/django-extensions
-django-coverage-plugin==1.6.0  # https://github.com/nedbat/django_coverage_plugin
-pytest-django==3.5.1  # https://github.com/pytest-dev/pytest-django
+django-debug-toolbar==2.0  # https://github.com/jazzband/django-debug-toolbar (A configurable set of debug panels)
+django-extensions==2.2.3  # https://github.com/django-extensions/django-extensions (Django custom management extensions)
+django-coverage-plugin==1.6.0  # https://github.com/nedbat/django_coverage_plugin (Measure Django template execution)
+pytest-django==3.5.1  # https://github.com/pytest-dev/pytest-django (A Django plugin for pytest)

@@ -2,9 +2,9 @@
 
 -r ./base.txt
 
-gunicorn==19.9.0  # https://github.com/benoitc/gunicorn
-psycopg2==2.8.3 --no-binary psycopg2  # https://github.com/psycopg/psycopg2
+gunicorn==19.9.0  # https://github.com/benoitc/gunicorn (WSGI HTTP Server for UNIX, fast clients and sleepy applications)
+psycopg2==2.8.3 --no-binary psycopg2  # https://github.com/psycopg/psycopg2 (PostgreSQL database adapter for Python)
 
 # Django
 # ------------------------------------------------------------------------------
-django-anymail[mailgun]==7.0.0  # https://github.com/anymail/django-anymail
+django-anymail[mailgun]==7.0.0  # https://github.com/anymail/django-anymail (Django email backends and webhooks)
