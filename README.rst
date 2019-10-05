@@ -10,6 +10,36 @@ A simple Django application to allow daily checkins and monitoring of your teams
      :target: https://github.com/ambv/black
      :alt: Black code style
 
+Sample request/output
+---------------------
+
+Given we have a couple of teams and users, make this request to fetch happiness statictics by user::
+
+    $ curl -H 'Accept: application/json; indent=4' -u "team-user-1":testPassword http://127.0.0.1:8000/api/v1/users/2/
+    {
+        "id": 2,
+        "username": "team-user-1",
+        "first_name": "",
+        "last_name": "",
+        "happiness_level": 3,
+        "statistics": {
+            "user_count_by_happiness_level": [
+                {
+                    "happiness_level": 3,
+                    "user_count": 1
+                },
+                {
+                    "happiness_level": 5,
+                    "user_count": 1
+                }
+            ],
+            "average_team_happiness": 4.0
+        },
+        "team": {
+            "id": 1,
+            "name": "team1"
+        }
+    }
 
 Settings
 --------
